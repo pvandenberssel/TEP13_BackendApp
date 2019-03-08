@@ -1,5 +1,6 @@
 package com.example.TEP13.Backend.Application.api;
 
+import com.example.TEP13.Backend.Application.controller.UserRepository;
 import com.example.TEP13.Backend.Application.controller.UserService;
 import com.example.TEP13.Backend.Application.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,10 @@ import javax.ws.rs.core.Response;
 public class userEndPoint {
     @Autowired
     UserService userService;
+
+
+    @Autowired
+    UserRepository yoyo;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -30,12 +35,12 @@ public class userEndPoint {
         return "Ok";
     }
 
-
-
-
-
-
-
+    @Path("hup")
+    @GET
+    public String hoi() {
+        yoyo.save(new User());
+        return "go";
+    }
     
 
 
