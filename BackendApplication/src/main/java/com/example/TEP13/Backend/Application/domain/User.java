@@ -15,4 +15,12 @@ public class User {
     String firstName;
     String lastName;
     String email;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }
