@@ -1,6 +1,7 @@
 package com.example.TEP13.Backend.Application.api;
 
 import com.example.TEP13.Backend.Application.controller.UserService;
+import com.example.TEP13.Backend.Application.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +25,8 @@ public class userEndPoint {
         return Response.ok(users).build();
     }
 
-    @POST
+    
+
 
 
 }
