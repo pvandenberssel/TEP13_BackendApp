@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.Id;
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -25,6 +26,11 @@ public class UserService {
     public Optional<User> findUserById(Long primaryKey){
         Optional<User> singleUser = userRepository.findById(primaryKey);
         return singleUser;
+    }
+
+    public User findUserByEmail (String email) {
+        User singleEmail = userRepository.findByEmail(email);
+        return singleEmail;
     }
 
 
