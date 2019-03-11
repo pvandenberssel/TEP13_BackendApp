@@ -5,10 +5,12 @@ import com.example.TEP13.Backend.Application.controller.UserService;
 import com.example.TEP13.Backend.Application.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Optional;
 
 @Path("user")
 @Component
@@ -22,6 +24,14 @@ public class userEndPoint {
     public Response getUsers(){
         Iterable<User> users = userService.findAllUsers();
         return Response.ok(users).build();
+    }
+
+    @Path("{id}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSingleUser(@PathParam("id") long id){
+        Optional<User> user = userService.findUserById(id);
+        return Response.ok(user).build();
     }
 
 
