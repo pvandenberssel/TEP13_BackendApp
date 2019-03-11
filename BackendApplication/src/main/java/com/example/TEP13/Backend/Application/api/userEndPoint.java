@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 import java.util.Optional;
 
 @Path("user")
@@ -44,6 +45,18 @@ public class userEndPoint {
         return newUser.getId();
     }
 
+    @Path("login/{email}/{password}")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response loginUser(@PathParam("email") String email, @PathParam("password") String password) {
+        User user = userService.findUserByEmail(email);
+        if(user.getPassword().equals(password)) {
+            return Response.ok(user).build();
+        } else {
+            return null;
+        }
+    }
 
 
 
