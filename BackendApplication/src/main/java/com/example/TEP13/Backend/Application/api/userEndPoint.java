@@ -41,7 +41,7 @@ public class userEndPoint {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public long postUser(User user){
-        User newUser = userService.save(new User());
+        User newUser = userService.saveUser(user);
         return newUser.getId();
     }
 
@@ -57,6 +57,8 @@ public class userEndPoint {
             return null;
         }
     }
+
+
 
 
 
