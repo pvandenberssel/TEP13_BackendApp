@@ -1,8 +1,12 @@
 package com.example.TEP13.Backend.Application.controller;
 
 import com.example.TEP13.Backend.Application.domain.User;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.persistence.Id;
+import java.util.Optional;
 
 @Component
 public class UserService {
@@ -16,6 +20,11 @@ public class UserService {
 
     public User save(User user){
         return userRepository.save(user);
+    }
+
+    public Optional<User> findUserById(Long primaryKey){
+        Optional<User> singleUser = userRepository.findById(primaryKey);
+        return singleUser;
     }
 
 
