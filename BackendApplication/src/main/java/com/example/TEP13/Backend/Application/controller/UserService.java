@@ -33,13 +33,14 @@ public class UserService {
         return singleEmail;
     }
 
-    public void fillUser(String password, String firstName, String lastName, String email) {
+    public User fillUser(String password, String firstName, String lastName, String email) {
         User user = new User();
         user.setPassword(password);
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setEmail(email);
         saveUser(user);
+        return user;
     }
 
 
