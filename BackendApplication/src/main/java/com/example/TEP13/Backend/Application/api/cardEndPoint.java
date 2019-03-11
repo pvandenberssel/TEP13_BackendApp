@@ -32,9 +32,4 @@ public class cardEndPoint {
         return Response.accepted(card.getId()).build();
     }
 
-    @Path("fill")
-    public void fillCard(){
-
-    }
-
 }
