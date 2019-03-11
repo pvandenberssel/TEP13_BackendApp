@@ -17,4 +17,6 @@ public class Card {
 
     @ManyToOne
     User user;
+
+    
 }
