@@ -28,9 +28,13 @@ public class cardEndPoint {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Response newCard(Card card){
-        System.out.println("test");
-        card=cardService.saveCard(card);
-        return Response.ok(card.getId()).build();
+        card = cardService.saveCard(card);
+        return Response.accepted(card.getId()).build();
+    }
+
+    @Path("fill")
+    public void fillCard(){
+
     }
 
 }
