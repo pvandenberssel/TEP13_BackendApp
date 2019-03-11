@@ -11,6 +11,7 @@ public class Card {
     long id;
 
     String type;
+    String title;
     LocalDateTime date;
     String description;
 
