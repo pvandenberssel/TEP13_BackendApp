@@ -23,4 +23,14 @@ public class cardEndPoint {
         return Response.ok(cards).build();
     }
 
+    @Path("new")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response newCard(Card card){
+        System.out.println("test");
+        card=cardService.saveCard(card);
+        return Response.ok(card.getId()).build();
+    }
+
 }

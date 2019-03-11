@@ -13,4 +13,12 @@ public class CardService {
         Iterable<Card> cards = cardRepository.findAll();
         return cards;
     }
+
+    public Card saveCard(Card card){
+        return cardRepository.save(card);
+    }
+
+
+
+
 }
