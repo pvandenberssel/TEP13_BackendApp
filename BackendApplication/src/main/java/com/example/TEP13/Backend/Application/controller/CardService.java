@@ -22,11 +22,12 @@ public class CardService {
     }
 
 
-    public void fillCard(String title, String Description, String Type){
+    public void fillCard(String title, String Description, String Type,User user){
         Card card = new Card();
         card.setTitle(title);
         card.setDescription(Description);
         card.setType(Type);
+        card.setUser(user);
         saveCard(card);
     }
 
