@@ -40,9 +40,14 @@ public class userEndPoint {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public long postUser(User user){
-        User newUser = userService.save(new User());
-        return newUser.getId();
+    public Response newUser(User user){
+        user = userService.saveUser(user);
+        return Response.accepted(user.getId()).build();
+    }
+
+    @Path("fill")
+    public void fillUser() {
+
     }
 
     @Path("login/{email}/{password}")
