@@ -44,6 +44,15 @@ public class userEndPoint {
         return Response.accepted(user.getId()).build();
     }
 
+    @Path("fill")
+    public Response fillUser() {
+        userService.fillUser("geheim1", "Piet", "Puk", "Piet.Puk@youngcolfield.nl");
+        userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl");
+        userService.fillUser("geheim3", "Jasper", "Lustig", "Jasper.Lustig@youngcolfield.nl");
+        userService.fillUser("geheim4", "Pim", "van den Bersselaar", "Pim.vandenBersselaar@youngcolfield.nl");
+        return Response.ok().build();
+    }
+
 
     @Path("login/{email}/{password}")
     @POST
