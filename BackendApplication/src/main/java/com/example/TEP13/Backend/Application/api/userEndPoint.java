@@ -34,8 +34,7 @@ public class userEndPoint {
         Optional<User> user = userService.findUserById(id);
         return Response.ok(user).build();
     }
-
-
+    
     @Path("new")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -62,6 +61,8 @@ public class userEndPoint {
             return null;
         }
     }
+
+
 
 
 
