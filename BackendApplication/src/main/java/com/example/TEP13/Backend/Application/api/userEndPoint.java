@@ -35,14 +35,14 @@ public class userEndPoint {
     }
 
 
-/*
+    @Path("new")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public String postUser(){
-        User newuser = userService.save(new User());
-        return "Ok";
-    }*/
+    public long postUser(User user){
+        User newUser = userService.save(new User());
+        return newUser.getId();
+    }
 
 
 
