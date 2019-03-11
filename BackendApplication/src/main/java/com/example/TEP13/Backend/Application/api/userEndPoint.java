@@ -35,9 +35,6 @@ public class userEndPoint {
     }
 
 
-
-
-
 /*
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
