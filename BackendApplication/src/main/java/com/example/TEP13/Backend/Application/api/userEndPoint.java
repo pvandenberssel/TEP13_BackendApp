@@ -34,6 +34,7 @@ public class userEndPoint {
         return Response.ok(user).build();
     }
 
+
     @Path("new")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
