@@ -33,8 +33,13 @@ public class cardEndPoint {
     }
 
     @Path("fill")
-    public void fillCard(){
-
+    public Response fillCard(){
+        cardService.fillCard("ok","blablba","dummy");
+        cardService.fillCard("ok23","bddda","dummy2");
+        cardService.fillCard("ok34","asdfkjanfds","dummy4");
+        cardService.fillCard("123132","asdfnalkfdsn","dummy5");
+        cardService.fillCard("433542","ldaslldald","dummy6");
+        return Response.ok().build();
     }
 
 }

@@ -44,10 +44,6 @@ public class userEndPoint {
         return Response.accepted(user.getId()).build();
     }
 
-    @Path("fill")
-    public void fillUser() {
-
-    }
 
     @Path("login/{email}/{password}")
     @POST
