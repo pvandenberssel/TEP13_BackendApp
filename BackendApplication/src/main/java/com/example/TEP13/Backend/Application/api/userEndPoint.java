@@ -16,32 +16,28 @@ public class userEndPoint {
     @Autowired
     UserService userService;
 
-
-    @Autowired
-    UserRepository yoyo;
-
+    @Path("all")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response letsgo(){
+    public Response getUsers(){
         Iterable<User> users = userService.findAllUsers();
         return Response.ok(users).build();
     }
 
+
+
+
+
+/*
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public String postUser(){
         User newuser = userService.save(new User());
         return "Ok";
-    }
+    }*/
 
-    @Path("hup")
-    @GET
-    public String hoi() {
-        yoyo.save(new User());
-        return "go";
-    }
-    
+
 
 
 
