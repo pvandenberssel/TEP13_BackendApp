@@ -13,13 +13,12 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.Optional;
 
-@Path("user")
+@Path("users")
 @Component
 public class userEndPoint {
     @Autowired
     UserService userService;
 
-    @Path("all")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUsers(){
@@ -34,8 +33,7 @@ public class userEndPoint {
         Optional<User> user = userService.findUserById(id);
         return Response.ok(user).build();
     }
-    
-    @Path("new")
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
@@ -53,6 +51,26 @@ public class userEndPoint {
         return Response.ok().build();
     }
 
+    @Path("{id}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateSingleUser(@PathParam("id") long id, User user) {
+
+        Optional<User> optionalTarget = this.userService.findUserById(id);
+        if (optionalTarget.isPresent()) {
+            User target = optionalTarget.get();
+            target.setEmail(user.getEmail());
+            target.setFirstName(user.getFirstName());
+            target.setLastName(user.getLastName());
+            target.setPassword(user.getPassword());
+
+            return Response.ok(this.userService.saveUser(target)).build();
+        } else {
+            return Response.status(404).build();
+        }
+    }
+
 
     @Path("login/{email}/{password}")
     @POST
@@ -60,16 +78,10 @@ public class userEndPoint {
     @Produces(MediaType.APPLICATION_JSON)
     public Response loginUser(@PathParam("email") String email, @PathParam("password") String password) {
         User user = userService.findUserByEmail(email);
-        if(user.getPassword().equals(password)) {
+        if (user.getPassword().equals(password)) {
             return Response.ok(user).build();
         } else {
             return null;
         }
     }
-
-
-
-
-
-
 }

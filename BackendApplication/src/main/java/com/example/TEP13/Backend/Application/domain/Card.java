@@ -39,7 +39,7 @@ public class Card {
     }
 
     public long getUserId() {
-        return user.id;
+        return user.getId();
     }
 
     public void setId(long id) {
