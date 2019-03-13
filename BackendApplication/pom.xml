@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example.TEP13</groupId>
-	<artifactId>Backend Application</artifactId>
+	<artifactId>BackendApplication</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Backend Application</name>
 	<description>Demo project for Spring Boot</description>
@@ -46,6 +46,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
