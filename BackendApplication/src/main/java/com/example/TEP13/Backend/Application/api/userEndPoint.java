@@ -53,7 +53,6 @@ public class userEndPoint {
         return Response.ok().build();
     }
 
-
     @Path("login/{email}/{password}")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -66,6 +65,25 @@ public class userEndPoint {
             return null;
         }
     }
+
+    @Path("update/{id}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateUser(@PathParam("id") long id, User user) {
+        userService.updateUser(id, user);
+        return Response.ok().build();
+    }
+
+    @Path("delete/{id}")
+    @DELETE
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteUser(@PathParam("id") long id) {
+        boolean deleted  = userService.deleteUser(id);
+        return Response.ok(deleted).build();
+    }
+
 
 
 
