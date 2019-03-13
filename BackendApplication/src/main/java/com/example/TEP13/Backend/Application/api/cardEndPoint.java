@@ -46,5 +46,26 @@ public class cardEndPoint {
         return Response.ok().build();
     }
 
+    @Path("update/{id}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public  Response UpdateCard(@PathParam("id") long id, Card card){
+        Card updatedcard = cardService.updateCard(id,card);
+        return Response.accepted(updatedcard).build();
+    }
+
+    @Path("delete/{id}")
+    @DELETE
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response DeleteCard(@PathParam("id") long id){
+        boolean deleted = cardService.deleteCardById(id);
+        return Response.ok(deleted).build();
+    }
+
+
+
+
 
 }
