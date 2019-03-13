@@ -6,9 +6,9 @@ import java.time.LocalDateTime;
 @Entity
 public class Card {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    long id;
+    private long id;
 
     String type;
     String title;
