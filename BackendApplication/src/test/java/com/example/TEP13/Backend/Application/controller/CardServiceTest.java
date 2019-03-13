@@ -8,7 +8,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class CardServiceTest {
     private Card card = new Card();
 
     @Test
-    public void testSave(){
+    public void testSaveCard(){
         Card result = new Card();
         Mockito.when(this.cardRepository.save(card)).thenReturn(result);
         Assert.assertEquals(result,this.cardRepository.save(card));
