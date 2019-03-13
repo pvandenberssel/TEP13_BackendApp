@@ -18,6 +18,10 @@ public class Card {
     @ManyToOne
     User user;
 
+
+    public User getUser(){
+        return user;
+    }
     public long getId() {
         return id;
     }
