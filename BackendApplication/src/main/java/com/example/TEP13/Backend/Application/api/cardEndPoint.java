@@ -3,12 +3,16 @@ package com.example.TEP13.Backend.Application.api;
 import com.example.TEP13.Backend.Application.controller.CardService;
 import com.example.TEP13.Backend.Application.controller.UserService;
 import com.example.TEP13.Backend.Application.domain.Card;
+import com.example.TEP13.Backend.Application.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Path("card")
 @Component
@@ -32,8 +36,13 @@ public class cardEndPoint {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Response newCard(Card card){
-        card = cardService.saveCard(card);
-        return Response.accepted(card.getId()).build();
+        if(card.getUser().getId() != 0){
+            card.setDate(LocalDateTime.now());
+            card = cardService.saveCard(card);
+            return Response.accepted(card.getId()).build();
+        }else{
+            return Response.ok("fail").build();
+        }
     }
 
     @Path("fill")

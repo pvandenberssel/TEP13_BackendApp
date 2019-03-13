@@ -42,10 +42,6 @@ public class Card {
         return description;
     }
 
-    public long getUserId() {
-        return user.id;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -68,5 +64,9 @@ public class Card {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public long getUserId(){
+        return user.getId();
     }
 }
