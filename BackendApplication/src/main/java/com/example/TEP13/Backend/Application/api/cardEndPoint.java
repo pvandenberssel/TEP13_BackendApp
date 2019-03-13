@@ -38,11 +38,11 @@ public class cardEndPoint {
 
     @Path("fill")
     public Response fillCard(){
-        cardService.fillCard("ok","blablba","dummy",userService.fillUser("geheim1", "Piet", "Puk", "Piet.Puk@youngcolfield.nl"));
-        cardService.fillCard("ok23","bddda","dummy2",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
-        cardService.fillCard("ok34","asdfkjanfds","dummy4",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
-        cardService.fillCard("123132","asdfnalkfdsn","dummy5",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
-        cardService.fillCard("433542","ldaslldald","dummy6",userService.fillUser("geheim3", "Jasper", "Lustig", "Jasper.Lustig@youngcolfield.nl"));
+        cardService.fillCard("ok","blablba","Vraag",userService.fillUser("geheim1", "Piet", "Puk", "Piet.Puk@youngcolfield.nl"));
+        cardService.fillCard("ok23","bddda","Vraag",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
+        cardService.fillCard("ok34","asdfkjanfds","Aanbod",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
+        cardService.fillCard("123132","asdfnalkfdsn","Vraag",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
+        cardService.fillCard("433542","ldaslldald","Aanbod",userService.fillUser("geheim3", "Jasper", "Lustig", "Jasper.Lustig@youngcolfield.nl"));
         return Response.ok().build();
     }
 
