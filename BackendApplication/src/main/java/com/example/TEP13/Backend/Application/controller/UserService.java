@@ -1,12 +1,9 @@
 package com.example.TEP13.Backend.Application.controller;
 
 import com.example.TEP13.Backend.Application.domain.User;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Id;
-import java.util.List;
 import java.util.Optional;
 
 @Component
