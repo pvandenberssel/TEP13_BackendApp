@@ -7,8 +7,7 @@ import java.time.LocalDateTime;
 public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
-    long id;
+    private long id;
 
     String type;
     String title;
@@ -42,10 +41,6 @@ public class Card {
         return description;
     }
 
-    public long getUserId() {
-        return user.id;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -68,5 +63,9 @@ public class Card {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public long getUserId(){
+        return user.getId();
     }
 }
