@@ -43,6 +43,25 @@ public class UserService {
         return user;
     }
 
+    public User updateUser(long id, User user) {
+        User userTarget = userRepository.findById(id).get();
+
+        userTarget.setPassword(user.getPassword());
+        userTarget.setFirstName(user.getFirstName());
+        userTarget.setLastName(user.getLastName());
+        userTarget.setEmail(user.getEmail());
+        saveUser(userTarget);
+        return userTarget;
+    }
+
+    public boolean deleteUser(long id) {
+        if(this.userRepository.findById(id).isPresent()) {
+            this.userRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
 
