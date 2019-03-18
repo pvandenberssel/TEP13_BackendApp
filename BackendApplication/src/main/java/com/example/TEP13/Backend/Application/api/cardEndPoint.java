@@ -56,11 +56,11 @@ public class cardEndPoint {
 
     @Path("fill")
     public Response fillCard(){
-        cardService.fillCard("ok","blablba","Vraag",userService.fillUser("geheim1", "Piet", "Puk", "Piet.Puk@youngcolfield.nl"));
-        cardService.fillCard("ok23","bddda","Vraag",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
-        cardService.fillCard("ok34","asdfkjanfds","Aanbod",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
-        cardService.fillCard("123132","asdfnalkfdsn","Vraag",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
-        cardService.fillCard("433542","ldaslldald","Aanbod",userService.fillUser("geheim3", "Jasper", "Lustig", "Jasper.Lustig@youngcolfield.nl"));
+        cardService.fillCard("Huisgenoot","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Vraag",userService.fillUser("geheim1", "Piet", "Puk", "Piet.Puk@youngcolfield.nl"));
+        cardService.fillCard("Spaanse les","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Vraag",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
+        cardService.fillCard("Tweezit bank","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Aanbod",userService.fillUser("geheim4", "Pim", "van den Bersselaar", "Pim.vandenBersselaar@youngcolfield.nl"));
+        cardService.fillCard("Saxofoon les","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Vraag",userService.findUserByEmail("Bart.Devries@youngcolfield.nl"));
+        cardService.fillCard("Nieuwe eigenaar voor puppy","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Aanbod",userService.fillUser("geheim3", "Jasper", "Lustig", "Jasper.Lustig@youngcolfield.nl"));
         return Response.ok().build();
     }
 
