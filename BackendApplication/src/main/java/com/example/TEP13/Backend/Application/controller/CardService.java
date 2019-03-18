@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Component
 public class CardService {
@@ -29,6 +30,11 @@ public class CardService {
         card.setType(Type);
         card.setUser(user);
         saveCard(card);
+    }
+
+    public Optional<Card> findCardById(Long primaryKey){
+        Optional<Card> singleCard = cardRepository.findById(primaryKey);
+        return singleCard;
     }
 
     public Card updateCard(long id, Card card){

@@ -31,6 +31,15 @@ public class cardEndPoint {
         return Response.ok(cards).build();
     }
 
+
+    @Path("{id}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSingleCard(@PathParam("id") long id){
+        Optional<Card> singleCard = cardService.findCardById(id);
+        return Response.ok(singleCard).build();
+    }
+
     @Path("new")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
