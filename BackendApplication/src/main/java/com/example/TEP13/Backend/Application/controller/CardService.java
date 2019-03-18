@@ -29,6 +29,7 @@ public class CardService {
         card.setDescription(Description);
         card.setType(Type);
         card.setUser(user);
+        card.setDate(LocalDateTime.now());
         saveCard(card);
     }
 
