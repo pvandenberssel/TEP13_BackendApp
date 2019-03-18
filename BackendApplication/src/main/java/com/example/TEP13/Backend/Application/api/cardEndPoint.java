@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Path("card")
@@ -81,6 +82,17 @@ public class cardEndPoint {
         boolean deleted = cardService.deleteCardById(id);
         return Response.ok(deleted).build();
     }
+
+    @Path("search/{searchWord}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response searchCards(@PathParam("searchWord") String searchWord) {
+        List<Card> cardList = cardService.searchCards(searchWord);
+        System.out.println("hiero:" + cardList);
+        return Response.ok(cardList).build();
+    }
+
+
 
 
 
