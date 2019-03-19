@@ -57,11 +57,11 @@ public class cardEndPoint {
 
     @Path("fill")
     public Response fillCard(){
-        cardService.fillCard("Huisgenoot","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Vraag",userService.fillUser("geheim1", "Piet", "Puk", "Piet.Puk@youngcolfield.nl"));
-        cardService.fillCard("Spaanse les","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Vraag",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
-        cardService.fillCard("Tweezit bank","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Aanbod",userService.fillUser("geheim4", "Pim", "van den Bersselaar", "Pim.vandenBersselaar@youngcolfield.nl"));
-        cardService.fillCard("Saxofoon les","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Vraag",userService.findUserByEmail("Bart.Devries@youngcolfield.nl"));
-        cardService.fillCard("Nieuwe eigenaar voor puppy","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Aanbod",userService.fillUser("geheim3", "Jasper", "Lustig", "Jasper.Lustig@youngcolfield.nl"));
+        cardService.fillCard("Huisgenoot","Omdat een van mijn huisgenootjes weggaat uit huis ben ik op zoek naar een nieuwe huisgenoot.","Vraag",userService.fillUser("geheim1", "Piet", "Puk", "Piet.Puk@youngcolfield.nl"));
+        cardService.fillCard("Spaanse les","Aangezien ik een vakantie heb geboekt naar Spanje en graag in het Spaans een drankje zou willen bestellen ben ik op zoek naar iemand die me een klein woordtje Spaans kan bijbrengen.","Vraag",userService.fillUser("geheim2", "Bart", "de Vries", "Bart.Devries@youngcolfield.nl"));
+        cardService.fillCard("Tweezit bank","Wegens een verhuizing en ruimtegebrek biedt ik mijn mooie tweezit bank te koop aan tegen elk aannemelijk bod","Aanbod",userService.fillUser("geheim4", "Pim", "van den Bersselaar", "Pim.vandenBersselaar@youngcolfield.nl"));
+        cardService.fillCard("Saxofoon les","Nadat ik in een opwelling een saxofoon heb gekocht ben ikk nu op zoek naar iemand die mij les zou kunnen geven.","Vraag",userService.findUserByEmail("Bart.Devries@youngcolfield.nl"));
+        cardService.fillCard("Nieuwe eigenaar voor puppy","Wegens tijdgebrek en ruimtegebrek ben ik opzoek naar een andere eigenaar voor mijn hond.","Aanbod",userService.fillUser("geheim3", "Jasper", "Lustig", "Jasper.Lustig@youngcolfield.nl"));
         return Response.ok().build();
     }
 
